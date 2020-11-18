@@ -106,6 +106,17 @@
         "bug"
       ]
     }
+    {
+          "login": "captain26",
+          "name": "Vasu Bansal",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/56953124?v=4",
+          "profile": "https://github.com/captain26",
+          "contributions": [
+            "code",
+            "bug",
+            "Design"
+          ]
+        }
   ],
   "contributorsPerLine": 7,
   "projectName": "IIT-BHU-app",
