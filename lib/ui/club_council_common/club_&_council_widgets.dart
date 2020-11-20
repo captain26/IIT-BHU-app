@@ -4,13 +4,13 @@ import 'package:iit_app/external_libraries/spin_kit.dart';
 import 'package:iit_app/model/appConstants.dart';
 import 'package:iit_app/model/built_post.dart';
 import 'package:iit_app/model/colorConstants.dart';
-import 'package:iit_app/pages/club/club.dart';
+import 'package:iit_app/pages/club/clubPage.dart';
 import 'package:iit_app/ui/club_council_common/description.dart';
 import 'package:iit_app/ui/separator.dart';
 import 'package:iit_app/ui/text_style.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:iit_app/screens/account.dart';
+import 'package:iit_app/pages/account/accountPage.dart';
 
 class ClubAndCouncilWidgets {
   static Widget getPanelBackground(
@@ -22,14 +22,12 @@ class ClubAndCouncilWidgets {
     BuiltClubPost clubDetail,
   }) {
     assert((isCouncil == true && isClub == false) || (isCouncil == false && isClub == true));
-    assert((isCouncil && councilDetail != null) || (isCouncil == false));
-    assert((isClub && clubDetail != null) || (isClub == false));
 
     final bottom = MediaQuery.of(context).viewInsets.bottom;
     dynamic _data = isCouncil ? councilDetail : clubDetail;
 
-    final _secy = isCouncil ? councilDetail.gensec : clubDetail.secy;
-    final _jointSecy = isCouncil ? councilDetail.joint_gensec : clubDetail.joint_secy;
+    final _secy = isCouncil ? councilDetail?.gensec : clubDetail?.secy;
+    final _jointSecy = isCouncil ? councilDetail?.joint_gensec : clubDetail?.joint_secy;
 
     return Container(
       color: ColorConstants.workshopContainerBackground,
@@ -73,7 +71,7 @@ class ClubAndCouncilWidgets {
                 SizedBox(height: 15.0),
                 ClubAndCouncilWidgets.getSecies(context, secy: _secy, jointSecy: _jointSecy),
                 _data == null ? Container() : ClubAndCouncilWidgets.getSocialLinks(_data),
-                SizedBox(height: 1.5 * ClubAndCouncilWidgets.getMinPanelHeight(context)),
+                SizedBox(height: 2 * ClubAndCouncilWidgets.getMinPanelHeight(context)),
               ],
             ),
     );
@@ -212,10 +210,10 @@ class ClubAndCouncilWidgets {
             BackButton(
                 color: Colors.lightGreen,
                 onPressed: () => {
-                      print(AccountScreen.flag),
-                      if (AccountScreen.flag == "Account")
+                      print(AccountPage.flag),
+                      if (AccountPage.flag == "Account")
                         Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => AccountScreen()))
+                            context, MaterialPageRoute(builder: (context) => AccountPage()))
                       else
                         Navigator.pop(context),
                     }),

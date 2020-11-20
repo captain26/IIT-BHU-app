@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iit_app/external_libraries/spin_kit.dart';
 import 'package:iit_app/model/colorConstants.dart';
+import 'package:iit_app/pages/map/mapPage.dart';
 import 'package:iit_app/pages/mess/mess.dart';
-import 'package:iit_app/screens/map.dart';
-import 'package:iit_app/screens/account.dart';
-import 'package:iit_app/screens/allWorkshops.dart';
+import 'package:iit_app/pages/account/accountPage.dart';
+import 'package:iit_app/pages/allWorkshops/allWorkshopsPage.dart';
 import 'package:iit_app/screens/complaints.dart';
 import 'package:iit_app/pages/Home/homePage.dart';
-import 'package:iit_app/pages/login.dart';
-import 'package:iit_app/screens/about.dart';
-import 'package:iit_app/screens/settings.dart';
+import 'package:iit_app/pages/login/loginPage.dart';
+import 'package:iit_app/pages/about/aboutPage.dart';
+import 'package:iit_app/pages/settings/settingsPage.dart';
 import 'package:iit_app/services/connectivityCheck.dart';
 import 'package:iit_app/services/crud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,12 +45,12 @@ void main() async {
       '/home': (BuildContext context) => HomePage(),
       '/mess': (BuildContext context) => MessScreen(),
       '/allWorkshops': (BuildContext context) => AllWorkshopsScreen(),
-      '/account': (BuildContext context) => AccountScreen(),
+      '/account': (BuildContext context) => AccountPage(),
       '/complaints': (BuildContext context) => ComplaintsScreen(),
       '/settings': (BuildContext context) => SettingsScreen(),
       '/login': (BuildContext context) => LoginPage(),
       '/about': (BuildContext context) => AboutPage(),
-      '/mapScreen': (BuildContext context) => MapScreen(),
+      '/mapPage': (BuildContext context) => MapPage(),
     },
   ));
 }
